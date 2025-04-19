@@ -13,6 +13,9 @@ setup_logger("lightrag", level="INFO")
 
 load_dotenv()
 
+if not os.path.exists("rag"):
+    os.makedirs("rag")
+
 async def initialize_rag():
     rag = LightRAG(
         working_dir="rag",
